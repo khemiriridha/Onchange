@@ -1,0 +1,22 @@
+<div class="employee">
+	<form #empForm="ngForm" (ngSubmit)="onFormSubmit(empForm)">
+	  <p>Name: <input name="name" [ngModel]="emp.name"></p>
+	  <p>Age:<input name="age" [ngModel]="emp.age"></p>  
+	  <button>Submit</button>
+	</form>
+</div>	
+<div class="message">
+	<p>Message: <input [(ngModel)]="msg"/></p>
+</div>	
+<input  [value]="hello">
+<br> 
+<select [(ngModel)]="selectedValue">
+  <option *ngFor="let c of countries" [ngValue]="c.id">{{c.name}}</option>
+</select>
+<br>
+<input #input  [(ngModel)]="ninja.name">
+<p>{{ ninja.name  }}</p>
+<p>{{ ninja.belt  }}</p>
+<p>{{ selectedValue  }}</p>
+<button (click)= "alertval(input.value,selectedValue)">clikc me </button>
+<app-emp [employee]="emp" [message]="msg"></app-emp>
